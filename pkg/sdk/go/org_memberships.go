@@ -42,7 +42,7 @@ func (sdk mfSDK) CreateOrgMemberships(om []OrgMembership, orgID string, token st
 }
 
 func (sdk mfSDK) GetOrgMembership(memberID, orgID, token string) (OrgMembership, error) {
-	url := fmt.Sprintf("%s/%s/%s/members/%s", sdk.authURL, orgsEndpoint, orgID, memberID)
+	url := fmt.Sprintf("%s/%s/%s/memberships/%s", sdk.authURL, orgsEndpoint, orgID, memberID)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		return OrgMembership{}, err

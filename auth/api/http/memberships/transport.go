@@ -50,7 +50,7 @@ func MakeHandler(svc auth.Service, mux *bone.Mux, tracer opentracing.Tracer, log
 		opts...,
 	))
 
-	mux.Get("/orgs/:orgID/members/:memberID", kithttp.NewServer(
+	mux.Get("/orgs/:orgID/memberships/:memberID", kithttp.NewServer(
 		kitot.TraceServer(tracer, "view_org_membership")(viewOrgMembershipEndpoint(svc)),
 		decodeOrgMembershipRequest,
 		encodeResponse,

@@ -112,7 +112,7 @@ paths:
         '401':
           description: Missing or invalid access token provided.
         '500':
-          $ref: "#/components/responses/ServiceError"      
+          $ref: "#/components/responses/ServiceError"
   /orgs/search:
     post:
       summary: Search and retrieve organizations.
@@ -195,7 +195,7 @@ paths:
           description: Organization does not exist.
         '500':
           $ref: "#/components/responses/ServiceError"
-  /orgs/{orgId}/members/{memberId}:
+  /orgs/{orgId}/memberships/{memberId}:
     get:
       summary: Retrieves organization membership details.
       description: |
@@ -941,7 +941,7 @@ components:
           type: string
           example: "editor"
           description: The user's proposed role in the organization.
-        
+
   parameters:
     ApiKeyId:
       name: id
